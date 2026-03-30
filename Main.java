@@ -52,5 +52,15 @@ public class Main {
         for (String subject : plan.keySet()) {
             System.out.println(subject + ": " + plan.get(subject) + " hours/day");
         }
+        System.out.println("\nAI Suggestions:");
+
+        for (Subject s : subjects) {
+            if (s.difficulty >= 4) {
+                System.out.println("Focus more on " + s.name + " (High Difficulty)");
+            }
+            if (s.deadlineDays <= 3) {
+                System.out.println("Urgent: " + s.name + " deadline is near!");
+            }   
+        }
     }
 }
